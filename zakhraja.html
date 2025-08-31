@@ -86,10 +86,19 @@
         </footer>
     </div>
 
-    <!-- === الربط مع ملف التحكم بالإعلانات === -->
-    <script src="./ads.js"></script>
-    
     <script>
+        // --- لوحة التحكم بالإعلانات المدمجة ---
+        const adSlots = {
+            ad1: `<div class="h-24 bg-slate-200 dark:bg-slate-700 flex items-center justify-center rounded-lg"><p class="text-slate-500">مساحة إعلانية 1</p></div>`,
+            ad2: `<div class="h-24 bg-slate-200 dark:bg-slate-700 flex items-center justify-center rounded-lg"><p class="text-slate-500">مساحة إعلانية 2</p></div>`,
+            ad3: `<div class="h-24 bg-slate-200 dark:bg-slate-700 flex items-center justify-center rounded-lg"><p class="text-slate-500">مساحة إعلانية 3</p></div>`,
+            ad4: `<div class="h-24 bg-slate-200 dark:bg-slate-700 flex items-center justify-center rounded-lg"><p class="text-slate-500">مساحة إعلانية 4</p></div>`,
+            ad5: `<div class="h-24 bg-slate-200 dark:bg-slate-700 flex items-center justify-center rounded-lg"><p class="text-slate-500">مساحة إعلانية 5</p></div>`,
+            ad6: `<div class="h-24 bg-slate-200 dark:bg-slate-700 flex items-center justify-center rounded-lg"><p class="text-slate-500">مساحة إعلانية 6</p></div>`,
+            ad7: `<div class="h-24 bg-slate-200 dark:bg-slate-700 flex items-center justify-center rounded-lg"><p class="text-slate-500">مساحة إعلانية 7</p></div>`
+        };
+        // عندما تحصل على شفرة إعلان، استبدل ما بين (`) و (`) بالشفرة. مثال: ad1: `<script>...</script>`,
+
         // --- DATA LIBRARIES ---
         const fontMaps = {
             'Bold Serif': {'a':'𝐚','b':'𝐛','c':'𝐜','d':'𝐝','e':'𝐞','f':'𝐟','g':'𝐠','h':'𝐡','i':'𝐢','j':'𝐣','k':'𝐤','l':'𝐥','m':'𝐦','n':'𝐧','o':'𝐨','p':'𝐩','q':'𝐪','r':'𝐫','s':'𝐬','t':'𝐭','u':'𝐮','v':'𝐯','w':'𝐰','x':'𝐱','y':'𝐲','z':'𝐳','A':'𝐀','B':'𝐁','C':'𝐂','D':'𝐃','E':'𝐄','F':'𝐅','G':'𝐆','H':'𝐇','I':'𝐈','J':'𝐉','K':'𝐊','L':'𝐋','M':'𝐌','N':'𝐍','O':'𝐎','P':'𝐏','Q':'𝐐','R':'𝐑','S':'𝐒','T':'𝐓','U':'𝐔','V':'𝐕','W':'𝐖','X':'𝐗','Y':'𝐘','Z':'𝐙'},
