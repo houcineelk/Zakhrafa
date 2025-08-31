@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zakhrafa Pro | زخرفة نصوص، أسماء ألعاب، ورموز احترافية</title>
+    <meta name="description" content="الأداة الاحترافية لزخرفة النصوص بـ +50 خط، توليد أسماء لاعبين فريدة لـ PUBG وFree Fire، ونسخ آلاف الرموز والنقوش بنقرة واحدة.">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root { --main-bg: #f1f5f9; --card-bg: #ffffff; --text-color: #1e293b; --border-color: #e2e8f0; --primary-color: #0ea5e9; --primary-hover: #0284c7; }
+        html.dark { --main-bg: #0f172a; --card-bg: #1e293b; --text-color: #e2e8f0; --border-color: #334155; }
+        body { font-family: 'Cairo', sans-serif; background-color: var(--main-bg); color: var(--text-color); transition: background-color 0.3s, color 0.3s; }
+        .card { background-color: var(--card-bg); border: 1px solid var(--border-color); }
+        .tab-button { transition: background-color 0.2s, color 0.2s; }
+        .tab-button.active { background-color: var(--primary-color); color: white; }
+        .ad-container { margin-top: 1.5rem; margin-bottom: 1.5rem; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="container mx-auto p-4 md:p-6 max-w-6xl">
+        
+        <header class="text-center mb-6 flex justify-between items-center">
+            <h1 class="text-3xl md:text-4xl font-bold text-sky-500">Zakhrafa Pro</h1>
+            <button id="theme-toggle" class="text-2xl p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">🌙</button>
+        </header>
+
+        <div id="ad-slot-1" class="ad-container"></div>
+
+        <nav class="flex justify-center gap-2 md:gap-4 my-6 bg-slate-200 dark:bg-slate-800 p-2 rounded-xl">
+            <button data-tab="tab-text" class="tab-button active flex-1 md:flex-none text-slate-600 dark:text-slate-300 font-semibold py-3 px-6 rounded-lg">✍️ مولد الخطوط</button>
+            <button data-tab="tab-gamer" class="tab-button flex-1 md:flex-none text-slate-600 dark:text-slate-300 font-semibold py-3 px-6 rounded-lg">🎮 أسماء اللاعبين</button>
+            <button data-tab="tab-symbols" class="tab-button flex-1 md:flex-none text-slate-600 dark:text-slate-300 font-semibold py-3 px-6 rounded-lg">✨ نقوش ورموز</button>
+        </nav>
+
+        <main>
+            <div id="tab-text" class="tab-content">
+                <div class="card p-6 rounded-xl shadow-lg">
+                    <textarea id="text-input" class="w-full h-32 p-4 border-2 rounded-lg shadow-sm text-xl transition duration-200 bg-slate-100 dark:bg-slate-800 border-slate-300 dark:border-slate-600 focus:ring-2 focus:ring-sky-500" placeholder="اكتب نصك هنا..."></textarea>
+                    <div id="ad-slot-2" class="ad-container"></div>
+                    <div id="output-area" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6"></div>
+                </div>
+            </div>
+
+            <div id="tab-gamer" class="tab-content hidden">
+                <div class="card p-6 rounded-xl shadow-lg">
+                    <div class="flex flex-col sm:flex-row gap-4 mb-6">
+                        <input type="text" id="gamer-name-input" class="w-full p-3 border-2 rounded-lg shadow-sm text-lg bg-slate-100 dark:bg-slate-800 border-slate-300 dark:border-slate-600 focus:ring-2 focus:ring-sky-500" placeholder="اكتب اسمك...">
+                        <button id="generate-gamer-names-btn" class="w-full sm:w-auto bg-sky-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-sky-700 transition duration-200">🚀 توليد</button>
+                    </div>
+                    <div id="ad-slot-3" class="ad-container"></div>
+                    <div id="gamer-names-output" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+                </div>
+            </div>
+
+            <div id="tab-symbols" class="tab-content hidden">
+                <div id="ad-slot-4" class="ad-container"></div>
+                <div class="card p-6 rounded-xl shadow-lg mb-8">
+                    <h2 class="text-2xl font-bold text-center mb-2">مولد الأسماء بالنقوش</h2>
+                    <p class="text-center text-slate-500 dark:text-slate-400 mb-6">اكتب اسمك لدمجه مع زخارف ونقوش مميزة.</p>
+                    <div class="flex flex-col sm:flex-row gap-4 mb-6">
+                        <input type="text" id="deco-name-input" class="w-full p-3 border-2 rounded-lg shadow-sm text-lg bg-slate-100 dark:bg-slate-800 border-slate-300 dark:border-slate-600 focus:ring-2 focus:ring-sky-500" placeholder="اكتب اسمك هنا...">
+                        <button id="generate-deco-names-btn" class="w-full sm:w-auto bg-sky-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-sky-700 transition duration-200">✨ زخرفة</button>
+                    </div>
+                    <div id="deco-names-output" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+                </div>
+                
+                <div id="ad-slot-5" class="ad-container"></div>
+                <div class="card p-6 rounded-xl shadow-lg mb-8">
+                    <h2 class="text-2xl font-bold text-center mb-6">نقوش جاهزة للنسخ</h2>
+                    <div id="ready-decos-output" class="grid grid-cols-1 sm:grid-cols-2 gap-4"></div>
+                </div>
+
+                <div id="ad-slot-6" class="ad-container"></div>
+                <div id="symbol-categories-container" class="mt-8"></div>
+            </div>
+        </main>
+
+        <footer class="mt-8">
+            <div id="ad-slot-7" class="ad-container"></div>
+        </footer>
+    </div>
+
+    <!-- === الربط مع ملف التحكم بالإعلانات === -->
+    <script src="ads.js"></script>
+    
+    <script>
+        // --- DATA LIBRARIES ---
+        const fontMaps = {
+            'Bold Serif': {'a':'𝐚','b':'𝐛','c':'𝐜','d':'𝐝','e':'𝐞','f':'𝐟','g':'𝐠','h':'𝐡','i':'𝐢','j':'𝐣','k':'𝐤','l':'𝐥','m':'𝐦','n':'𝐧','o':'𝐨','p':'𝐩','q':'𝐪','r':'𝐫','s':'𝐬','t':'𝐭','u':'𝐮','v':'𝐯','w':'𝐰','x':'𝐱','y':'𝐲','z':'𝐳','A':'𝐀','B':'𝐁','C':'𝐂','D':'𝐃','E':'𝐄','F':'𝐅','G':'𝐆','H':'𝐇','I':'𝐈','J':'𝐉','K':'𝐊','L':'𝐋','M':'𝐌','N':'𝐍','O':'𝐎','P':'𝐏','Q':'𝐐','R':'𝐑','S':'𝐒','T':'𝐓','U':'𝐔','V':'𝐕','W':'𝐖','X':'𝐗','Y':'𝐘','Z':'𝐙'},
+            'Cursive': {'a':'𝒶','b':'𝒷','c':'𝒸','d':'𝒹','e':'𝑒','f':'𝒻','g':'𝑔','h':'𝒽','i':'𝒾','j':'𝒿','k':'𝓀','l':'𝓁','m':'𝓂','n':'𝓃','o':'𝑜','p':'𝓅','q':'𝓆','r':'𝓇','s':'𝓈','t':'𝓉','u':'𝓊','v':'𝓋','w':'𝓌','x':'𝓍','y':'𝓎','z':'𝓏','A':'𝒜','B':'𝐵','C':'𝒞','D':'𝒟','E':'𝐸','F':'𝐹','G':'𝒢','H':'𝐻','I':'𝐼','J':'𝒥','K':'𝒦','L':'𝐿','M':'𝑀','N':'𝒩','O':'𝒪','P':'𝒫','Q':'𝒬','R':'𝑅','S':'𝒮','T':'𝒯','U':'𝒰','V':'𝒱','W':'𝒲','X':'𝒳','Y':'𝒴','Z':'𝒵'},
+            'Double Struck': {'a':'𝕒','b':'𝕓','c':'𝕔','d':'𝕕','e':'𝕖','f':'𝕗','g':'𝕘','h':'𝕙','i':'𝕚','j':'𝕛','k':'𝕜','l':'𝕝','m':'𝕞','n':'𝕟','o':'𝕠','p':'𝕡','q':'𝕢','r':'𝕣','s':'𝕤','t':'𝕥','u':'𝕦','v':'𝕧','w':'𝕨','x':'𝕩','y':'𝕪','z':'𝕫','A':'𝔸','B':'𝔹','C':'ℂ','D':'𝔻','E':'𝔼','F':'𝔽','G':'𝔾','H':'ℍ','I':'𝕀','J':'𝕁','K':'𝕂','L':'𝕃','M':'𝕄','N':'ℕ','O':'𝕆','P':'ℙ','Q':'ℚ','R':'ℝ','S':'𝕊','T':'𝕋','U':'𝕌','V':'𝕍','W':'𝕎','X':'𝕏','Y':'𝕐','Z':'ℤ'},
+            'Old English': {'a':'𝔞','b':'𝔟','c':'𝔠','d':'𝔡','e':'𝔢','f':'𝔣','g':'𝔤','h':'𝔥','i':'𝔦','j':'𝔧','k':'𝔨','l':'𝔩','m':'𝔪','n':'𝔫','o':'𝔬','p':'𝔭','q':'𝔮','r':'𝔯','s':'𝔰','t':'𝔱','u':'𝔲','v':'𝔳','w':'𝔴','x':'𝔵','y':'𝔶','z':'𝔷','A':'𝔄','B':'𝔅','C':'ℭ','D':'𝔇','E':'𝔈','F':'𝔉','G':'𝔊','H':'ℌ','I':'ℑ','J':'𝔍','K':'𝔎','L':'𝔏','M':'𝔐','N':'𝔑','O':'𝔒','P':'𝔓','Q':'𝔔','R':'ℜ','S':'𝔖','T':'𝔗','U':'𝔘','V':'𝔙','W':'𝔚','X':'𝔛','Y':'𝔜','Z':'ℨ'},
+            'Monospace': {'a':'𝚊','b':'𝚋','c':'𝚌','d':'𝚍','e':'𝚎','f':'𝚏','g':'𝚐','h':'𝚑','i':'𝚒','j':'𝚓','k':'𝚔','l':'𝚕','m':'𝚖','n':'𝚗','o':'𝚘','p':'𝚙','q':'𝚚','r':'𝚛','s':'𝚜','t':'𝚝','u':'𝚞','v':'𝚟','w':'𝚠','x':'𝚡','y':'𝚢','z':'𝚣','A':'𝙰','B':'𝙱','C':'𝙲','D':'𝙳','E':'𝙴','F':'𝙵','G':'𝙶','H':'𝙷','I':'𝙸','J':'𝙹','K':'𝙺','L':'𝙻','M':'𝙼','N':'𝙽','O':'𝙾','P':'𝙿','Q':'𝚀','R':'𝚁','S':'𝚂','T':'𝚃','U':'𝚄','V':'𝚅','W':'𝚆','X':'𝚇','Y':'𝚈','Z':'𝚉'},
+        };
+        const symbols = {
+            'أسلحة 🔫': ['▄︻デ══━一', '⌐╦╦═─', '︻╦╤─', '︻╦̵̵͇̿̿̿̿══╤─', '╾━╤デ╦︻', 'Ⓞ═╦╗'],
+            'قلوب ❤️': ['❤', '❥', '♡', '♥', '❣', '❦', '❧', 'დ', 'ღ', '۵', 'ლ'],
+            'نجوم ✨': ['★', '☆', '✪', '✫', '✬', '✭', '✮', '✯', '✰', '☪', '✡', '✶', '✷', '✸', '✹', '✺', '❂', '❄', '❅', '❆', '❇', '❈', '❉', '❊', '❋'],
+            'حيوانات 🐵': ['(ᵔᴥᵔ)', '(`(エ)´)', 'ˁ˚ᴥ˚ˀ', '◖⚆ᴥ⚆◗', '₍ᐢ•ﻌ•ᐢ₎', 'ฅ^•ﻌ•^ฅ', '<コ:彡'],
+            'شطرنج ♟️': ['♔', '♕', '♖', '♗', '♘', '♙', '♚', '♛', '♜', '♝', '♞', '♟'],
+            'رموز متنوعة 🎲': ['☠', '⚡', '⚠', '♪', '♫', '♦', '♣', '♠', '©', '®', '™', '✓', '✔', '✗', '✘', '☒', '▲', '▼', '◄', '►']
+        };
+        const gamerNameDecorations = {
+            prefix: ['꧁', '༺', '☠︎', '⚡︎', '『', '★', '♛', '♜', '⚔️'],
+            suffix: ['꧂', '༻', '☠︎', '⚡︎', '』', '★', '♛', '♜', '⚔️']
+        };
+        const decorationTemplates = [
+            '꧁{name}꧂', '༺{name}༻', '★·.·´¯`·.·★ {name} ★·.·´¯`·.·★', '¸,ø¤º°`°º¤ø,¸ {name} ¸,ø¤º°`°º¤ø,¸',
+            '(-_-) {name} (-_-)', '•● {name} ●•', 'ıllıllı {name} ıllıllı', '╰☆☆ {name} ☆☆╮',
+            '【{name}】', '『{name}』', '︵‿︵‿୨♡୧‿︵‿︵', '°°°·.°·..·°¯°·._.· {name} ·._.·°¯°·.·° .·°°°'
+        ];
+
+        // --- CORE FUNCTIONS ---
+        const convertText = (text, fontMap) => text.split('').map(char => fontMap[char] || char).join('');
+        const getRandomItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
+        function copyToClipboard(text, button) {
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = text;
+            tempTextArea.style.position = 'absolute'; tempTextArea.style.left = '-9999px';
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            try {
+                document.execCommand('copy');
+                const originalText = button.textContent;
+                button.textContent = 'تم النسخ!';
+                button.classList.add('bg-green-500', 'dark:bg-green-600');
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.classList.remove('bg-green-500', 'dark:bg-green-600');
+                }, 1500);
+            } catch (err) { console.error('Copy failed', err); }
+            document.body.removeChild(tempTextArea);
+        }
+        function createCopyCard(text, parentElement, isLarge = false) {
+            const card = document.createElement('div');
+            card.className = 'card p-4 rounded-lg flex flex-col items-center justify-center text-center';
+            const textElement = document.createElement('div');
+            textElement.className = `w-full break-words mb-4 ${isLarge ? 'text-2xl' : 'text-lg'}`;
+            textElement.textContent = text;
+            const copyButton = document.createElement('button');
+            copyButton.className = 'w-full bg-sky-500 text-white font-bold py-2 px-4 rounded-md hover:bg-sky-600 transition-colors';
+            copyButton.textContent = 'نسخ';
+            copyButton.onclick = () => copyToClipboard(text, copyButton);
+            card.append(textElement, copyButton);
+            parentElement.appendChild(card);
+        }
+
+        // --- GENERATOR FUNCTIONS ---
+        function generateFonts() {
+            const inputText = document.getElementById('text-input').value;
+            const outputArea = document.getElementById('output-area');
+            outputArea.innerHTML = '';
+            if (!inputText.trim()) return;
+            for (const fontName in fontMaps) {
+                createCopyCard(convertText(inputText, fontMaps[fontName]), outputArea, true);
+            }
+        }
+        function generateGamerNames() {
+            const baseName = document.getElementById('gamer-name-input').value;
+            const outputArea = document.getElementById('gamer-names-output');
+            outputArea.innerHTML = '';
+            if (!baseName.trim()) return;
+            const nameSet = new Set();
+            while(nameSet.size < 12) {
+                const prefix = getRandomItem(gamerNameDecorations.prefix);
+                const suffix = getRandomItem(gamerNameDecorations.suffix);
+                const font = fontMaps[getRandomItem(Object.keys(fontMaps))];
+                nameSet.add(`${prefix}${convertText(baseName, font)}${suffix}`);
+            }
+            nameSet.forEach(name => createCopyCard(name, outputArea));
+        }
+        function generateDecoratedNames() {
+            const baseName = document.getElementById('deco-name-input').value;
+            const outputArea = document.getElementById('deco-names-output');
+            outputArea.innerHTML = '';
+            if (!baseName.trim()) return;
+            decorationTemplates.forEach(template => createCopyCard(template.replace('{name}', baseName), outputArea));
+        }
+        function populateReadyDecorations() {
+            const outputArea = document.getElementById('ready-decos-output');
+            outputArea.innerHTML = '';
+            decorationTemplates.forEach(template => createCopyCard(template.replace('{name}', '...'), outputArea));
+        }
+        function populateSymbolCategories() {
+            const container = document.getElementById('symbol-categories-container');
+            container.innerHTML = '';
+            for (const category in symbols) {
+                const card = document.createElement('div');
+                card.className = 'card p-4 rounded-xl shadow-lg mb-6';
+                const title = document.createElement('h3');
+                title.className = 'text-2xl font-bold mb-4 text-sky-500';
+                title.textContent = category;
+                const grid = document.createElement('div');
+                grid.className = 'grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4';
+                symbols[category].forEach(symbol => {
+                    const symbolCard = document.createElement('div');
+                    symbolCard.className = 'card p-2 flex flex-col items-center justify-center rounded-lg';
+                    const symbolText = document.createElement('p');
+                    symbolText.className = 'text-3xl mb-2';
+                    symbolText.textContent = symbol;
+                    const copyButton = document.createElement('button');
+                    copyButton.className = 'w-full text-sm bg-slate-200 dark:bg-slate-700 font-semibold py-1 px-2 rounded hover:bg-sky-500 hover:text-white transition-colors';
+                    copyButton.textContent = 'نسخ';
+                    copyButton.onclick = () => copyToClipboard(symbol, copyButton);
+                    symbolCard.append(symbolText, copyButton);
+                    grid.appendChild(symbolCard);
+                });
+                card.append(title, grid);
+                container.appendChild(card);
+            }
+        }
+
+        // --- UI & EVENT LISTENERS ---
+        const tabs = document.querySelectorAll('.tab-button');
+        const tabContents = document.querySelectorAll('.tab-content');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(item => item.classList.remove('active'));
+                tab.classList.add('active');
+                const target = document.getElementById(tab.dataset.tab);
+                tabContents.forEach(content => content.classList.add('hidden'));
+                target.classList.remove('hidden');
+            });
+        });
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            const html = document.documentElement;
+            html.classList.toggle('dark');
+            themeToggle.textContent = html.classList.contains('dark') ? '☀️' : '🌙';
+            localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+        });
+        document.getElementById('text-input').addEventListener('input', generateFonts);
+        document.getElementById('generate-gamer-names-btn').addEventListener('click', generateGamerNames);
+        document.getElementById('gamer-name-input').addEventListener('keyup', e => e.key === 'Enter' && generateGamerNames());
+        document.getElementById('generate-deco-names-btn').addEventListener('click', generateDecoratedNames);
+        document.getElementById('deco-name-input').addEventListener('keyup', e => e.key === 'Enter' && generateDecoratedNames());
+        
+        // --- INITIALIZATION ---
+        document.addEventListener('DOMContentLoaded', () => {
+            if (localStorage.getItem('theme') === 'dark' || (window.matchMedia('(prefers-color-scheme: dark)').matches && !localStorage.getItem('theme'))) {
+                document.documentElement.classList.add('dark');
+                themeToggle.textContent = '☀️';
+            }
+            // Load Ads
+            if (typeof adSlots !== 'undefined') {
+                for (let i = 1; i <= 7; i++) {
+                    const adContainer = document.getElementById(`ad-slot-${i}`);
+                    if (adContainer && adSlots[`ad${i}`] && adSlots[`ad${i}`].trim() !== '') {
+                        adContainer.innerHTML = adSlots[`ad${i}`];
+                    }
+                }
+            }
+            populateSymbolCategories();
+            populateReadyDecorations();
+            document.getElementById('gamer-name-input').value = "Legend";
+            generateGamerNames();
+            document.getElementById('deco-name-input').value = "اسمي";
+            generateDecoratedNames();
+        });
+    </script>
+</body>
+</html>
+
